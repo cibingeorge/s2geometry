@@ -66,10 +66,11 @@ class S2RegionIntersection final : public S2Region {
   bool Contains(const S2Cell& cell) const override;
   bool MayIntersect(const S2Cell& cell) const override;
 
- private:
-  // Internal copy constructor used only by Clone() that makes a deep copy of
+  // Copy constructor used only by Clone() that makes a deep copy of
   // its argument.
   S2RegionIntersection(const S2RegionIntersection& src);
+
+ private:
 
   std::vector<std::unique_ptr<S2Region>> regions_;
 

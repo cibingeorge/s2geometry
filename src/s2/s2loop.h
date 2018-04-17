@@ -507,6 +507,10 @@ class S2Loop final : public S2Region {
   };
 #endif  // SWIG
 
+  // Copy constructor used only by Clone() that makes a deep copy of
+  // its argument.
+  S2Loop(const S2Loop& src);
+
  private:
   // All of the following need access to contains_origin().  Possibly this
   // method should be public.
@@ -517,9 +521,6 @@ class S2Loop final : public S2Region {
   friend class LoopCrosser;
   friend class s2builderutil::S2PolygonLayer;
 
-  // Internal copy constructor used only by Clone() that makes a deep copy of
-  // its argument.
-  S2Loop(const S2Loop& src);
 
   // Returns an S2PointLoopSpan containing the loop vertices, for use with the
   // functions defined in s2loop_measures.h.

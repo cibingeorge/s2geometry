@@ -354,10 +354,11 @@ class S2Polyline final : public S2Region {
   };
 #endif  // SWIG
 
- private:
-  // Internal copy constructor used only by Clone() that makes a deep copy of
+  // Copy constructor used only by Clone() that makes a deep copy of
   // its argument.
   S2Polyline(const S2Polyline& src);
+
+ private:
 
   // Allows overriding the automatic validity checking controlled by the
   // --s2debug flag.

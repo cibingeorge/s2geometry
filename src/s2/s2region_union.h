@@ -70,10 +70,11 @@ class S2RegionUnion final : public S2Region {
   bool Contains(const S2Cell& cell) const override;
   bool MayIntersect(const S2Cell& cell) const override;
 
- private:
-  // Internal copy constructor used only by Clone() that makes a deep copy of
+  // Copy constructor used only by Clone() that makes a deep copy of
   // its argument.
   S2RegionUnion(const S2RegionUnion& src);
+
+ private:
 
   std::vector<std::unique_ptr<S2Region>> regions_;
 
